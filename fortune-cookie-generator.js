@@ -82,7 +82,7 @@ var generateFortuneCookie = function() {
   
   //Use 'Math.floor()' and 'Math.random()' to select a random saying from array
   // Reference: http://www.w3schools.com/jsref/jsref_random.asp 
-  var fortuneRandom = fortunesList((Math.floor(Math.random() * fortunesList.length) + 1));
+  var fortuneRandom = fortunesList[(Math.floor(Math.random() * fortunesList.length) + 1)];
   //Randoms fortune cookie text
   fortuneCookieText.innerHTML = fortuneRandom;
 
