@@ -17,7 +17,7 @@ ul, li {
 }
 
 body {
-    background-image: url('../images/background-paper.jpg');
+    background-image: url('/images/background-paper.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
