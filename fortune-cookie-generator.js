@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////
 //
 // Fortune Cookie Generator
 //
@@ -60,31 +60,41 @@ var fortunesList = [
 ]
 
 
+var noFortune;  // No Fortune has been generated
+var yesFortune; // Fortune has been generated
 
   // Code for the Fortune Cookie generator
 var generateFortuneCookie = function() {
   // Select the paragraph of fortune cookie text
-  //Reference: http://www.w3schools.com/jsref/met_document_getelementbyid.asp
+  // Reference: http://www.w3schools.com/jsref/met_document_getelementbyid.asp
   var fortuneCookieText = document.getElementById('fortune-cookie-text');
+    // Check if fortune has been generated before
+    if (noFortune === false) {
+      yesFortune = (Math.floor(Math.random() * fortunesList.length) + 1);
+    }
+    // If no fortune has been generated, it will display"Click the button to generate a saying." 
+    else {
+      yesFortune = (Math.floor(Math.random() * fortunesList.length - 1));
+    }
   
-  //Create 'li' element
+  // Use 'Math.floor()' and 'Math.random()' to select a random saying from array
+  // Reference: http://www.w3schools.com/jsref/jsref_random.asp 
+  var fortuneRandom = fortunesList[yesFortune];
+  // Randoms fortune cookie text
+  fortuneCookieText.innerHTML = fortuneRandom;
+
+  
+  
+  // Create 'li' element
   var fortuneLiElement = document.createElement('li');
-  //Set 'li' element equal to "fortuneCookieText" element using 'innerHTML'
-  //Refernece: http://www.w3schools.com/jsref/prop_html_innerhtml.asp
+  // Set 'li' element equal to "fortuneCookieText" element using 'innerHTML'
+  // Refernece: http://www.w3schools.com/jsref/prop_html_innerhtml.asp
   fortuneLiElement.innerHTML = fortuneCookieText.innerHTML;
-  //Select 'previous-fortunes-container
+  // Select 'previous-fortunes-container
   var previousFortunesContainer = document.getElementById('previous-fortunes-container');
-  //Append the new 'li' element
+  // Append the new 'li' element
   //Reference: http://www.w3schools.com/jsref/met_node_appendchild.asp
   previousFortunesContainer.appendChild(fortuneLiElement);
   console.log(previousFortunesContainer);
 
-  
-  //Use 'Math.floor()' and 'Math.random()' to select a random saying from array
-  // Reference: http://www.w3schools.com/jsref/jsref_random.asp 
-  var fortuneRandom = fortunesList[(Math.floor(Math.random() * fortunesList.length) + 1)];
-  //Randoms fortune cookie text
-  fortuneCookieText.innerHTML = fortuneRandom;
-
 }
-
