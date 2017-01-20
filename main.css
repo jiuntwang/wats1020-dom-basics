@@ -13,7 +13,14 @@ html {
 }
 
 ul, li {
-    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-image: url('../images/background-paper.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 
