@@ -1,11 +1,19 @@
 /* Fortune Cookie Generator Styles */
 
+@font-face {
+    font-family: seven-swordsmen;
+    src: url(fonts/seven-swordsmen.ttf);
+}
+
 html {
     text-align: center;
     padding: 2em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    font-family: seven-swordsmen;
+}
 .fortune-cookie-saying-wrapper {
     border: 1px solid #666;
     padding: 1em;
